@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "live-reload": "nodemon server/index.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --watchAll",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --coverage tests/unit"
   },
   "engines": {
     "node": "17"
@@ -15,6 +16,7 @@
   "author": "Gabriel Neves",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
