@@ -69,7 +69,7 @@ function handlerError(err, res) {
     return res.end()
   }
 
-  logger.error(`Caught error on API ${error.stack}`)
+  logger.error(`Caught error on API ${err.stack}`)
   res.writeHead(500)
   return res.end()
 }

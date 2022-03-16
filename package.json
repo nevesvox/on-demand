@@ -7,8 +7,8 @@
   "scripts": {
     "live-reload": "nodemon server/index.js",
     "start": "node server/index.js",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --watchAll",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --coverage tests/unit"
+    "test:watch": "cross-env LOG_DISABLED=true node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --watchAll",
+    "test:coverage": "cross-env LOG_DISABLED=true node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --coverage tests/unit"
   },
   "engines": {
     "node": "17"
@@ -16,6 +16,7 @@
   "author": "Gabriel Neves",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   },
